@@ -1,0 +1,22 @@
+.card {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+
+    .cajaItemDetail {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2 {
+        margin: auto;
+        font-size: 1.5rem;
+    }
+
+    hr {
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,54 @@
+.cajaPadre {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    .contenedor {
+        border: 2px solid #000000;
+        border-radius: 4px;
+        display: flex;
+        width: 15rem;
+        flex-direction: column;
+
+        transition: transform 0.3s;
+
+        &:hover {
+            -moz-box-shadow: 0px 0px 24px 1px rgba(221, 176, 0, 1);
+            box-shadow: 0px 0px 24px 1px rgba(221, 176, 0, 1);
+        }
+
+        .imagen {
+            width: 100%;
+        }
+
+        .btnVer {
+            border: 2px solid #000000;
+            width: 10rem;
+            margin: 0.3rem;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #ddb;
+            }
+        }
+
+        .nombre {
+            margin: 0.2rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.3rem;
+        }
+
+        .descrip {
+            padding: 0.2rem;
+        }
+
+        .precio {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+};

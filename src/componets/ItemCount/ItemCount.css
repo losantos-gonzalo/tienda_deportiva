@@ -1,0 +1,17 @@
+.Count {
+    display: flex;
+    flex-direction: column;
+
+    .Count__btn {
+        margin-left: auto;
+        margin-right: auto;
+        width: 7rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .btnIncrementarDescrementar {
+        width: 10rem;
+        margin: auto;
+    }
+}

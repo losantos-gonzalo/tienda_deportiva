@@ -1,0 +1,20 @@
+.navBar {
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: last baseline;
+    background: #eacda3;
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    background: linear-gradient(to right, #d6ae7b, #eacda3);
+    ;
+
+    .logo {
+        width: 8%;
+        margin: 0.2rem 0.5rem;
+    }
+
+    .boton {
+        margin-right: 30rem;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
