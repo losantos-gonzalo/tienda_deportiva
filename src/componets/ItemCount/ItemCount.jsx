@@ -1,27 +1,45 @@
-import { Button, Flex } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Button, Flex } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const ItemCount = ({ stock, valorInicial, onAdd }) => {
-
-    const [count, setCount] = useState(valorInicial)
+const ItemCount = ({ stock, valorInicial, onAdd, maxAvailable }) => {
+    const [count, setCount] = useState(valorInicial);
+    const [isAdded, setIsAdded] = useState(false);
 
     const incrementar = () => {
-        count < stock && setCount(count + 1)
-    }
-    const descrementar = () => {
-        count > valorInicial && setCount(count - 1)
-    }
+        count < maxAvailable && setCount(count + 1);
+    };
+
+    const decrementar = () => {
+        count > valorInicial && setCount(count - 1);
+    };
+
+    const handleAdd = () => {
+        onAdd(count);
+        setIsAdded(true);
+    };
+
     return (
         <Flex className='Count'>
-            <div className='Count__btn'>
-                <Button colorScheme='blue' onClick={descrementar}>-</Button>
-                {count}
-                <Button colorScheme='blue' onClick={incrementar}>+</Button>
+            {!isAdded && (
+                <div className='Count__btn'>
+                    <Button colorScheme='blue' onClick={decrementar}>-</Button>
+                    <p className='contador'>{count}</p>
+                    <Button colorScheme='blue' onClick={incrementar}>+</Button>
+                </div>
+            )}
+            <div className='contenedorBtn'>
+                <Button className='btnIncrementarDecrementar' onClick={handleAdd}>Agregar al Carrito</Button>
+                <Button className='btn'><Link to='/'>Seguir comprando</Link></Button>
             </div>
-
-            <Button className='btnIncrementarDescrementar' onClick={() => onAdd(count)}>Agregar al Carrito</Button>
+            <Button>
+                <Link to='/cart'>
+                    Ir al Carrito
+                </Link>
+            </Button>
         </Flex>
-    )
-}
+    );
+};
 
-export default ItemCount
+export default ItemCount;
+

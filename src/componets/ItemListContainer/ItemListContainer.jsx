@@ -1,33 +1,50 @@
 import { Box, Flex } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { getProducts, productsByCategory } from '../../data/asyncMock'
 import '../ItemListContainer/ItemListContainer.css'
 import { useParams } from 'react-router-dom'
 import { MoonLoader } from 'react-spinners'
 import ItemList from '../ItemList/ItemList'
+import { db } from '../../config/firebase'
+import { collection, getDoc, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ title }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
+
     const { categoryId } = useParams();
 
+    // video
     useEffect(() => {
         setLoading(true)
+        const getData = async () => {
+            const coleccion = collection(db, 'productos')
+            const queryRef = !categoryId ?
+                coleccion
+                :
+                query(coleccion, where('categoria', '==', categoryId))
 
-        const fetchData = categoryId ? productsByCategory(categoryId) : getProducts();
-        fetchData
-            .then((data) => setProducts(data))
-            .catch((error) => console.log(error))
-            .finally(() => setLoading(false))
+            const response = await getDocs(queryRef)
+
+            const productos = response.docs.map((doc) => {
+                const newItem = {
+                    ...doc.data(),
+                    id: doc.id
+                }
+                return newItem
+            })
+            setProducts(productos)
+            setLoading(false)
+        }
+
+        getData()
     }, [categoryId]);
 
-    console.log(products);
 
     return (
         <Flex className='productos'>
             <Box className='title'>
-            {title}
+                {title}
             </Box>
             <hr />
 

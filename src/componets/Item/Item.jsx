@@ -3,7 +3,7 @@ import { Box, Button } from '@chakra-ui/react'
 import '../Item/Item.css'
 import { Link } from 'react-router-dom';
 
-const Item = ({ nombre, precio, img, id }) => {
+const Item = ({ nombre, precio, img, id, stock }) => {
 
   return (
     <div className='cajaPadre'>
@@ -16,9 +16,10 @@ const Item = ({ nombre, precio, img, id }) => {
 
         <p className='descrip'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, ipsum.</p>
         <p className='precio'>${precio}</p>
+        <p className='precio'>Stock: {stock}</p>
 
         <Button className='btnVer'>
-          <Link to={`producto/${id}`}>
+          <Link to={`/producto/${id}`}>
             Ver mas
           </Link>
         </Button>
