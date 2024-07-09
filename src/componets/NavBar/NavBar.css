@@ -1,22 +1,23 @@
 .navBar {
     border: 2px solid #000000;
     display: flex;
-    justify-content: last baseline;
-    background: #eacda3;
-    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    justify-content: space-between;
+    align-items: center;
     background: linear-gradient(to right, #d6ae7b, #eacda3);
+    padding: 0.5rem;
 
     .cajita {
         border: 2px solid red;
 
         img {
             margin: 0.2rem 0.5rem;
-            width: 8%;
+            width: 50px;
+            height: auto;
         }
     }
 
     .boton {
-        margin-right: 30rem;
+        margin-right: 2rem;
         margin-top: auto;
         margin-bottom: auto;
     }
