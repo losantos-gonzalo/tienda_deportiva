@@ -1,4 +1,5 @@
 import './App.css'
+import './componets/NavBar/NavBar.css'
 import ItemListContainer from './componets/ItemListContainer/ItemListContainer'
 import NavBar from './componets/NavBar/NavBar'
 import { ChakraProvider } from '@chakra-ui/react'
