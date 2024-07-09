@@ -18,8 +18,7 @@ const NavBar = () => {
 
                 <Box className='cajita'>
                     <Link to='/'>
-                        {/* <img src="https://ams3.digitaloceanspaces.com/graffica/2022/12/adidas_318-565831.webp" className='logo' /> */}
-                        LOGO
+                        <img src="https://ams3.digitaloceanspaces.com/graffica/2022/12/adidas_318-565831.webp" className='logo' />
                     </Link>
                 </Box>
 
