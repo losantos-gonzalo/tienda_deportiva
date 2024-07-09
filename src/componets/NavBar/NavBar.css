@@ -6,9 +6,13 @@
     background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
     background: linear-gradient(to right, #d6ae7b, #eacda3);
 
-    .logo {
-        width: 8%;
-        margin: 0.2rem 0.5rem;
+    .cajita {
+        border: 2px solid red;
+
+        img {
+            margin: 0.2rem 0.5rem;
+            width: 8%;
+        }
     }
 
     .boton {
