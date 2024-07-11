@@ -1,4 +1,4 @@
-import { FiShoppingCart } from 'react-icons/fi';//provando icon
+import { FiShoppingCart } from 'react-icons/fi';
 import { Box } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import Context from '../../context/CartContext'
