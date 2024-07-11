@@ -15,7 +15,6 @@ import { CartContextProvider } from './context/CartContext'
 import Cart from './componets/Cart/Cart'
 import Checkout from './componets/checkout/Checkout'
 import '../src/componets/Cart/cart.css'
-import '../src/componets/CartWidget/cartwidget.css'
 
 function App() {
 
