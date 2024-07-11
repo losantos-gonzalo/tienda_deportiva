@@ -1,9 +1,9 @@
 # Tienda Deportiva
 
-  <!-- ![image](/src/img/adidas_318-565831.jpg)  -->
+  [image](/src/img/adidas_318-565831.jpg)
 
 ### Vista Previa 
-gif/video
+![Descripción del GIF](/src/gif/20240711_111914.gif)
 
 ### Deploy 
 [Tienda Deporitva](https://tienda-deportiva-st4k.vercel.app/)
@@ -37,7 +37,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 1. Clona este repositorio:
     ```sh
-    git clone https://github.com/tu-usuario/tu-repositorio.git
+    git clone https://github.com/losantos-gonzalo/tienda_deportiva
     ```
 
 2. Navega al directorio del proyecto:
@@ -66,7 +66,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 - Detalle de producto
 ### Navegacion
 - Enrutamientos de las diferentes vistas
-### Carriti
+### Carrito
 - Vista del carrito de compras
 ### Checkout
 - Formulario para completas los datos del usuario
