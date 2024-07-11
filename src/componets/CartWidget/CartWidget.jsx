@@ -9,7 +9,7 @@ const CartWidget = () => {
 
     return (
 
-        <Box m={2} display="flex" alignItems="center" className='box'>
+        <Box m={2} display="flex" alignItems="center">
             <span>{getQuantity() > 0 && getQuantity()}</span>
             <Link to='/cart'>
                 <Box as={FiShoppingCart} boxSize={6} color="primary" ml={2} />
