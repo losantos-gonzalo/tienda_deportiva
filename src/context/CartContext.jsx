@@ -44,8 +44,6 @@ export const CartContextProvider = ({ children }) => {
         return cart.reduce((acc, item) => acc + item.quantity, 0)
     }
 
-
-    //video 50m
     const decrementarItem = (id) => {
         const updateCart = cart.map((prod) => {
             if (prod.id === id) {
@@ -54,7 +52,6 @@ export const CartContextProvider = ({ children }) => {
             }
             return prod
         })
-        //actualizar carrito
         setCart(updateCart)
     }
 
@@ -66,7 +63,6 @@ export const CartContextProvider = ({ children }) => {
             }
             return prod
         })
-        //actualizar carrito
         setCart(updateCart)
     }
 

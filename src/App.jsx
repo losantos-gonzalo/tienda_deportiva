@@ -1,5 +1,6 @@
 import './App.css'
 import './componets/NavBar/NavBar.css'
+import '../src/componets/checkout/checkout.css'
 import ItemListContainer from './componets/ItemListContainer/ItemListContainer'
 import NavBar from './componets/NavBar/NavBar'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -13,6 +14,7 @@ import './componets/ItemCount/ItemCount.css'
 import { CartContextProvider } from './context/CartContext'
 import Cart from './componets/Cart/Cart'
 import Checkout from './componets/checkout/Checkout'
+import '../src/componets/Cart/cart.css'
 
 function App() {
 
@@ -42,7 +44,7 @@ function App() {
 
 export default App
 
-// -------------  1hs  ---------------
+// -------------  1.22hs  ---------------  producto sin stock
 
 // https://coderhouse.zoom.us/rec/play/h8wU2figwPpuFMCmUYXMN7MQschTaDdQyVLMnJKv7h2htp-PBdSi3EvxQflC-TCCPtzMi8FFrXd2-8ql.AVg2q5xsFTXo0E_Y?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fcoderhouse.zoom.us%2Frec%2Fshare%2Fk3y7bxkh5V9f3h_thmRPXYurJsHLnGod08m0nuv0mnKcZ2xsvk3VttfnwWxRQTPK.MXQWxC_UUSVNDp8h
 

@@ -1,6 +1,8 @@
-import { Button, Flex, Heading } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import Context from '../../context/CartContext'
+import '../Cart/cart.css'
+import { DeleteIcon } from '@chakra-ui/icons'
 import {
     Table,
     Thead,
@@ -21,8 +23,9 @@ const Cart = () => {
     if (cart.length === 0) {
         return (
             <Flex direction={'column'} justify={'center'} align={'center'}>
-                <Heading>Todavía no agregaste productos al carrito</Heading>
-                <Link to='/'>Ver productos</Link>
+                <Heading className='fallo-compra'>Todavía no agregaste productos al carrito</Heading>
+                <hr />
+                <Link to='/' className='link'>Ver productos</Link>
             </Flex>
         )
     } else {
@@ -31,7 +34,7 @@ const Cart = () => {
                 <Heading>Carrito de Compras</Heading>
 
                 <TableContainer>
-                    <Table variant='striped' colorScheme='teal'>
+                    <Table variant='striped' className='color'>
                         <Thead>
                             <Tr>
                                 <Th>Nombre</Th>
@@ -71,8 +74,9 @@ const Cart = () => {
                         <Tfoot>
                             <Tr>
                                 <Td>
-                                    <Button onClick={() => clearCart()}>
+                                    <Button onClick={() => clearCart()} className='btn'>
                                         Vaciar Carrito
+                                        <DeleteIcon />
                                     </Button>
                                 </Td>
                                 <Td colSpan="3">

@@ -21,19 +21,27 @@ const ItemCount = ({ stock, valorInicial, onAdd, maxAvailable }) => {
 
     return (
         <Flex className='Count'>
+
             {!isAdded && (
+
                 <div className='Count__btn'>
-                    <Button colorScheme='blue' onClick={decrementar}>-</Button>
+                    <Button
+                        colorScheme='blue' onClick={decrementar} className='btn'>
+                        -</Button>
                     <p className='contador'>{count}</p>
-                    <Button colorScheme='blue' onClick={incrementar}>+</Button>
+                    <Button
+                        colorScheme='blue' onClick={incrementar} className='btn'>
+                        +</Button>
                 </div>
             )}
+
             <div className='contenedorBtn'>
-                <Button className='btnIncrementarDecrementar' onClick={handleAdd}>Agregar al Carrito</Button>
+                <Button className='agregarCarrito' onClick={handleAdd}>Agregar al Carrito</Button>
                 <Button className='btn'><Link to='/'>Seguir comprando</Link></Button>
             </div>
+
             <Button>
-                <Link to='/cart'>
+                <Link to='/cart' className='btn'>
                     Ir al Carrito
                 </Link>
             </Button>

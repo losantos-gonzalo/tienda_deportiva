@@ -14,7 +14,6 @@ const ItemListContainer = ({ title }) => {
 
     const { categoryId } = useParams();
 
-    // video
     useEffect(() => {
         setLoading(true)
         const getData = async () => {

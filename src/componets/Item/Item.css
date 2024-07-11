@@ -33,6 +33,11 @@
             &:hover {
                 background-color: #ddb;
             }
+
+        }
+        .sinStock {
+            color: red;
+            text-align: center;
         }
 
         .nombre {

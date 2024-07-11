@@ -6,7 +6,7 @@
 gif/video
 
 ### Deploy 
-link
+[Tienda Deporitva](https://tienda-deportiva-st4k.vercel.app/)
 
 ### Descripcion
 ¡Bienvenidos a mi tienda deportiva! Este proyecto es una aplicación web simple para la venta de productos deportivos. Aquí encontrarás una variedad de artículos para diferentes deportes.

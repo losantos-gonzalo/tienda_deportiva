@@ -1,0 +1,17 @@
+.color {
+    border: 2px solid #ddb;
+
+    .btn {
+        display: flex;
+        border: 1px solid #000000;
+    }
+}
+.fallo-compra {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.link {
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 0.2rem;
+}

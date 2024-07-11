@@ -15,7 +15,8 @@ const ItemDetail = ({ id, nombre, stock, img, precio, currentQuantity }) => {
             id,
             nombre,
             precio,
-            stock
+            stock,
+            img
         };
         addItem(item, quantity);
         toast(`Agregaste ${quantity} unidades`);
@@ -23,7 +24,7 @@ const ItemDetail = ({ id, nombre, stock, img, precio, currentQuantity }) => {
 
     return (
         <Box className='card'>
-            <h2>Detalle de Producto</h2>
+            <h2 className='card__titulo'>Detalle de Producto</h2>
             <hr />
 
             <div className='cajaPadre cajaItemDetail'>
@@ -33,18 +34,21 @@ const ItemDetail = ({ id, nombre, stock, img, precio, currentQuantity }) => {
                         src={img}
                         alt={nombre}
                     />
-                    <p className='nombre'>{nombre}</p>
-                    <p className='descrip'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, ipsum.</p>
-                    <p className='precio'>${precio}</p>
 
-                    <p>Stock: ${stock}</p>
+                    <div className='cajaItemDetail-contenedor'>
+                        <p className='nombre'>{nombre}</p>
+                        <p className='descrip'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, ipsum.</p>
+                        <p className='precio'>${precio}</p>
 
-                    <p>Cantidad actual en el carrito: {currentQuantity}</p>
+                        <p className='stock'>Stock: ${stock}</p>
+
+                        <p className='stock-actual'>Cantidad actual en el carrito: {currentQuantity}</p>
+                    </div>
+
+                    <ItemCount stock={stock} valorInicial={1} onAdd={onAdd} maxAvailable={maxAvailable} />
 
                 </Box>
             </div>
-
-            <ItemCount stock={stock} valorInicial={1} onAdd={onAdd} maxAvailable={maxAvailable} />
             <ToastContainer />
         </Box>
     );

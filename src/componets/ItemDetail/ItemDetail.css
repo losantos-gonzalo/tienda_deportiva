@@ -4,11 +4,31 @@
     flex-direction: column;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
 
     .cajaItemDetail {
         margin-left: auto;
         margin-right: auto;
+
+        .contenedor {
+
+            .cajaItemDetail-contenedor {
+                padding: 0.1rem;
+
+                .precio {
+                    text-align: center;
+                }
+
+                .stock {
+                    text-align: center;
+                }
+
+                .stock-actual {
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
     }
 
     h2 {

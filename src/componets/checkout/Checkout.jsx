@@ -9,6 +9,9 @@ import {
     Input,
     Flex,
     Button,
+    Heading,
+    Box,
+    Image,
 } from '@chakra-ui/react'
 import { Timestamp, addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase'
@@ -66,7 +69,7 @@ const Checkout = () => {
         if (!validateForm()) {
             return
         }
-        //video
+
         if (cart.length === 0) {
             Swal.fire({
                 title: "Carrito vacio!",
@@ -140,54 +143,67 @@ const Checkout = () => {
 
     return (
         <Flex className='checkout'>
-            <FormControl isInvalid={error.name}>
-                <FormLabel>Nombre</FormLabel>
-                <Input
-                    type='text'
-                    name='name'
-                    placeholder='Juan Perez'
-                    onChange={updateUser}
-                />
-                {error.name && <FormErrorMessage>{error.name}</FormErrorMessage>}
-            </FormControl>
-            <FormControl isInvalid={error.email}>
-                <FormLabel>Email</FormLabel>
-                <Input
-                    type='email'
-                    name='email'
-                    placeholder='JuanPerez@hotmail.com'
-                    onChange={updateUser}
-                />
-                {error.email && <FormErrorMessage>{error.email}</FormErrorMessage>}
-            </FormControl>
-            <FormControl isInvalid={error.repeatedEmail}>
-                <FormLabel>Repetir email</FormLabel>
-                <Input
-                    type='email'
-                    name='repeatedEmail'
-                    placeholder='JuanPerez@hotmail.com'
-                    onChange={updateUser}
-                />
-                {error.repeatedEmail && <FormErrorMessage>{error.repeatedEmail}</FormErrorMessage>}
-            </FormControl>
-            <FormControl isInvalid={error.phone}>
-                <FormLabel>Teléfono</FormLabel>
-                <Input
-                    type='text'
-                    name='phone'
-                    placeholder='1122334455'
-                    onChange={updateUser}
-                />
-                {error.phone && <FormErrorMessage>{error.phone}</FormErrorMessage>}
-            </FormControl>
-            <Button onClick={getOrder} isLoading={loading}>
-                Finalizar compra
-            </Button>
+
+            <Heading>Resumen de la compra</Heading>
+            {
+                cart.map((prod) => (
+                    <Box key={prod.id} className='caja_img'>
+                        <p className='name'>{prod.nombre}</p>
+                        <Image src={prod.img} className='img' />
+                        <p className='precio'> Precio: ${prod.precio}</p>
+                        <hr />
+                    </Box>
+                ))
+            }
+
+            <Box className='boxCheckout'>
+                <Heading>Datos de facturacion</Heading>
+                <FormControl isInvalid={error.name}>
+                    <FormLabel>Nombre</FormLabel>
+                    <Input
+                        type='text'
+                        name='name'
+                        placeholder='Juan Perez'
+                        onChange={updateUser}
+                    />
+                    {error.name && <FormErrorMessage>{error.name}</FormErrorMessage>}
+                </FormControl>
+                <FormControl isInvalid={error.email}>
+                    <FormLabel>Email</FormLabel>
+                    <Input
+                        type='email'
+                        name='email'
+                        placeholder='JuanPerez@hotmail.com'
+                        onChange={updateUser}
+                    />
+                    {error.email && <FormErrorMessage>{error.email}</FormErrorMessage>}
+                </FormControl>
+                <FormControl isInvalid={error.repeatedEmail}>
+                    <FormLabel>Repetir email</FormLabel>
+                    <Input
+                        type='email'
+                        name='repeatedEmail'
+                        placeholder='JuanPerez@hotmail.com'
+                        onChange={updateUser}
+                    />
+                    {error.repeatedEmail && <FormErrorMessage>{error.repeatedEmail}</FormErrorMessage>}
+                </FormControl>
+                <FormControl isInvalid={error.phone}>
+                    <FormLabel>Teléfono</FormLabel>
+                    <Input
+                        type='text'
+                        name='phone'
+                        placeholder='1122334455'
+                        onChange={updateUser}
+                    />
+                    {error.phone && <FormErrorMessage>{error.phone}</FormErrorMessage>}
+                </FormControl>
+                <Button onClick={getOrder} isLoading={loading}>
+                    Finalizar compra
+                </Button>
+            </Box>
         </Flex>
     )
 }
 
 export default Checkout
-
-
-
